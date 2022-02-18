@@ -3,9 +3,57 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31825.309
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3A213206-96A2-4329-A24E-481D5708475E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{746CA6F9-66AD-4B37-BB5D-0ED1D5833B06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Api", "Serivces\Catalog\Catalog.Api\Catalog.Api.csproj", "{1625A751-B361-4BCB-B761-00E0D06D6110}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Entities", "Serivces\Catalog\Catalog.Entities\Catalog.Entities.csproj", "{7D7092CD-0E95-4F2B-924E-D3438CB7C456}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.DAL", "Serivces\Catalog\Catalog.DAL\Catalog.DAL.csproj", "{FC15C434-F8F0-4E55-A948-20BFE355E584}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Migrations", "Serivces\Catalog\Catalog.Migrations\Catalog.Migrations.csproj", "{89867885-3132-4B56-856F-97FA12329BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.BLL", "Serivces\Catalog\Catalog.BLL\Catalog.BLL.csproj", "{79F91012-5E18-49A1-88AF-D46400BBCCE3}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1625A751-B361-4BCB-B761-00E0D06D6110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1625A751-B361-4BCB-B761-00E0D06D6110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1625A751-B361-4BCB-B761-00E0D06D6110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1625A751-B361-4BCB-B761-00E0D06D6110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D7092CD-0E95-4F2B-924E-D3438CB7C456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D7092CD-0E95-4F2B-924E-D3438CB7C456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D7092CD-0E95-4F2B-924E-D3438CB7C456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D7092CD-0E95-4F2B-924E-D3438CB7C456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC15C434-F8F0-4E55-A948-20BFE355E584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC15C434-F8F0-4E55-A948-20BFE355E584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC15C434-F8F0-4E55-A948-20BFE355E584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC15C434-F8F0-4E55-A948-20BFE355E584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89867885-3132-4B56-856F-97FA12329BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89867885-3132-4B56-856F-97FA12329BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89867885-3132-4B56-856F-97FA12329BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89867885-3132-4B56-856F-97FA12329BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F91012-5E18-49A1-88AF-D46400BBCCE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F91012-5E18-49A1-88AF-D46400BBCCE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F91012-5E18-49A1-88AF-D46400BBCCE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F91012-5E18-49A1-88AF-D46400BBCCE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{746CA6F9-66AD-4B37-BB5D-0ED1D5833B06} = {3A213206-96A2-4329-A24E-481D5708475E}
+		{1625A751-B361-4BCB-B761-00E0D06D6110} = {746CA6F9-66AD-4B37-BB5D-0ED1D5833B06}
+		{7D7092CD-0E95-4F2B-924E-D3438CB7C456} = {746CA6F9-66AD-4B37-BB5D-0ED1D5833B06}
+		{FC15C434-F8F0-4E55-A948-20BFE355E584} = {746CA6F9-66AD-4B37-BB5D-0ED1D5833B06}
+		{89867885-3132-4B56-856F-97FA12329BF3} = {746CA6F9-66AD-4B37-BB5D-0ED1D5833B06}
+		{79F91012-5E18-49A1-88AF-D46400BBCCE3} = {746CA6F9-66AD-4B37-BB5D-0ED1D5833B06}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8125D56C-C3B0-418B-ABBD-D700B19E2645}
