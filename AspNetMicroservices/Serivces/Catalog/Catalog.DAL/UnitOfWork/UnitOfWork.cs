@@ -1,4 +1,5 @@
 ﻿using Catalog.DAL.Domain;
+using Catalog.DAL.Repository;
 using Catalog.Entities.Interfaces.Repository;
 using Catalog.Entities.Interfaces.UnitOfWork;
 using System;
@@ -16,6 +17,7 @@ namespace Catalog.DAL.UnitOfWork
         public UnitOfWork(CatalogDBContext dBContext)
         {
             this._dbContext = dBContext;
+            ProductRepository = new ProductRepository(dBContext);
         }
         
         public async Task<int> SaveAsync()

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Catalog.Entities.ApiEntities.Product.Request;
 using Catalog.Entities.ApiEntities.Product.Response;
 using Catalog.Entities.DBEntities;
 using Catalog.Entities.DtoEntities;
@@ -23,6 +24,8 @@ namespace Catalog.BLL.MappingImplementation.MappingConfigurations
 
                 cfg.CreateMap<List<DB_Product>, ProductsResponse>()
                 .ForMember(des => des.Products, map => map.MapFrom(src => src));
+
+                cfg.CreateMap<CreateProductRequest, DB_Product>();
             });
             return config.CreateMapper();
         }

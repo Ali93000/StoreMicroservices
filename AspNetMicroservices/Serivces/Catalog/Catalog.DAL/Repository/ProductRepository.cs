@@ -1,4 +1,5 @@
-﻿using Catalog.Entities.DBEntities;
+﻿using Catalog.DAL.Domain;
+using Catalog.Entities.DBEntities;
 using Catalog.Entities.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,7 +13,7 @@ namespace Catalog.DAL.Repository
     public class ProductRepository : GenericRepository<DB_Product>, IProductRepository
     {
         private readonly DbContext _dbContext;
-        public ProductRepository(DbContext dbContext) : base(dbContext)
+        public ProductRepository(CatalogDBContext dbContext) : base(dbContext)
         {
             this._dbContext = dbContext;
         }

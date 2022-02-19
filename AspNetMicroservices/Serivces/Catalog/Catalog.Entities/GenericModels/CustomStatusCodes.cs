@@ -9,8 +9,9 @@ namespace Catalog.Entities.GenericModels
     public class CustomStatusCodes
     {
         public static int Success { get; set; } = 5000;
+        public static int Created { get; set; } = 5001;
         // Not Found Codes
-        public static int Product_Not_Avaliable { get; set; } = 5001;
+        public static int Product_Not_Avaliable { get; set; } = 5020;
 
     }
 }

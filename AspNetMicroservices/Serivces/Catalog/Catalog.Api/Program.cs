@@ -1,4 +1,6 @@
 using Catalog.Api.ExtenstionManager;
+using Catalog.Api.Filters;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +12,12 @@ builder.Services.AddRepositoryConfigurations();
 builder.Services.AddBLLConfigurations();
 
 
-builder.Services.AddControllers()
+builder.Services.AddControllers(opt=> {
+    opt.Filters.Add(new ValidationFilter());
+}).AddFluentValidation(fv =>
+{
+    fv.RegisterValidatorsFromAssemblyContaining<Program>();
+})
     .ConfigureApiBehaviorOptions(options =>
 {
     options.SuppressConsumesConstraintForFormFileParameters = true;
@@ -21,7 +28,7 @@ builder.Services.AddControllers()
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerConfigurations();
 
 var app = builder.Build();
 
@@ -29,7 +36,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(option =>
+    {
+        option.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog Swagger Api Documentation");
+    });
+
 }
 
 app.UseAuthorization();
